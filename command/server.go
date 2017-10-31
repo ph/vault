@@ -213,8 +213,7 @@ func (c *ServerCommand) Run(args []string) int {
 	// Initialize the backend
 	factory, exists := c.PhysicalBackends[config.Storage.Type]
 	if !exists {
-		c.Ui.Output(fmt.Sprintf(
-			"Unknown storage type %s",
+		c.Ui.Output(fmt.Sprintf("Unknown storage type %s",
 			config.Storage.Type))
 		return 1
 	}

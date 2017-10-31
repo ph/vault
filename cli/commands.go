@@ -27,6 +27,7 @@ import (
 	physConsul "github.com/hashicorp/vault/physical/consul"
 	physCouchDB "github.com/hashicorp/vault/physical/couchdb"
 	physDynamoDB "github.com/hashicorp/vault/physical/dynamodb"
+	physElasticsearch "github.com/hashicorp/vault/physical/elasticsearch"
 	physEtcd "github.com/hashicorp/vault/physical/etcd"
 	physFile "github.com/hashicorp/vault/physical/file"
 	physGCS "github.com/hashicorp/vault/physical/gcs"
@@ -133,6 +134,7 @@ func Commands(metaPtr *meta.Meta) map[string]cli.CommandFactory {
 				"couchdb":                physCouchDB.NewCouchDBBackend,
 				"couchdb_transactional":  physCouchDB.NewTransactionalCouchDBBackend,
 				"dynamodb":               physDynamoDB.NewDynamoDBBackend,
+				"elasticsearch":          physElasticsearch.NewElasticsearchBackend,
 				"etcd":                   physEtcd.NewEtcdBackend,
 				"file":                   physFile.NewFileBackend,
 				"file_transactional":     physFile.NewTransactionalFileBackend,
