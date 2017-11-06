@@ -90,7 +90,7 @@ func (c *ElasticsearchClient) doRequest(verb string, url string, reader io.Reade
 
 	defer resp.Body.Close()
 
-	if resp.StatusCode == 401 {
+	if resp.StatusCode == http.StatusUnauthorized {
 		return nil, fmt.Errorf("permission denied to access the elasticsearch cluster, verify your credentials or your permissions")
 	}
 
